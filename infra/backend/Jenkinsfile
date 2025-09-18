@@ -31,7 +31,7 @@ pipeline {
     environment {
         TF_VAR_environment = "${params.ENVIRONMENT}"
         AWS_DEFAULT_REGION = 'eu-west-1'
-        TF_STATE_BUCKET = 'terraform-state-bucket-cdec41'
+        TF_STATE_BUCKET = 'terraform-state-bucket-cdec141'
         TF_STATE_KEY = 'backend/${params.ENVIRONMENT}/terraform-v2.tfstate'
         TF_STATE_REGION = 'eu-west-1'
     }
@@ -65,12 +65,10 @@ pipeline {
                             cat > backend.tf << 'EOF'
 terraform {
   backend "s3" {
-    bucket         = "terraform-state-bucket-cdec41"
+    bucket         = "terraform-state-bucket-cdec141"
     key            = "backend/dev/terraform-v2.tfstate"
     region         = "eu-west-1"
     encrypt        = true
-    dynamodb_table = "terraform-state-lock"
-    use_lockfile   = true
   }
 }
 EOF
