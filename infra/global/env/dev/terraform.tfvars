@@ -1,6 +1,6 @@
 # Global Infrastructure - Development Environment Configuration
 
-aws_region = "eu-west-1"
+aws_region = "us-east-1"
 
 # Domain Configuration
 domain_name = "aptupdate.store"  # Replace with your actual domain
